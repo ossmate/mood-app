@@ -4,7 +4,11 @@ import { redirect } from "next/navigation"
 
 const createNewUser = async () => {
   const user = await currentUser()
-  const match = await prisma.user.findUnique({ where: { clerkId: user?.id as string } })
+  const match = await prisma.user.findUnique({
+    where: { clerkId: user?.id as string }
+  })
+
+  console.log(match, 'match')
 
   if (!match) {
     await prisma.user.create({
