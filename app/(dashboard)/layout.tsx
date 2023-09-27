@@ -11,13 +11,13 @@ const DashboardLayout = ({ children }: Props) => {
       <aside className="absolute w-[200px] top-0 left-0 h-full border-r border-black/10">
         Mood
       </aside>
-      <div className="ml-[200px]">
+      <div className="h-full ml-[200px]">
         <header className="h-[60px] border-b border-black/10">
           <div className="h-full w-full px-6 flex items-center justify-end">
             <UserButton />
           </div>
         </header>
-        <div>
+        <div className="h-[calc(100vh-6px)]">
           {children}
         </div>
       </div>
