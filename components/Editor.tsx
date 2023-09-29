@@ -17,18 +17,14 @@ const Editor = ({ entry }) => {
   })
 
   return (
-    <div>
-      <div className="w-full h-full">
-        {isLoading && <div>loading...</div>}
-        <textarea
-          className="w-full h-full p-8 text-xl outline-none"
-          name="entry"
-          value={value}
-          onChange={e => setValue(e.target.value)}
-         />
-
-      </div>
-      <h1>{entry.content}</h1>
+    <div className="w-full h-full">
+      {isLoading && <div>loading...</div>}
+      <textarea
+        className="w-full h-full p-8 text-xl outline-none"
+        name="entry"
+        value={value}
+        onChange={e => setValue(e.target.value)}
+        />
     </div>
   )
 }
