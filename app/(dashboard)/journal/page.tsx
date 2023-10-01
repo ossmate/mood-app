@@ -1,14 +1,11 @@
 import EntryCard from "@/components/EntryCard"
 import NewEntryCard from "@/components/NewEntryCard"
-import { analyze } from "@/utils/ai"
 import { getUserByClerkId } from "@/utils/auth"
 import { prisma } from "@/utils/db"
 import Link from "next/link"
 
 const getEntries = async () => {
   const user = await getUserByClerkId()
-
-  await analyze("create me a vue component that render two numbers")
 
   return await prisma.journalEntry.findMany({
     where: {
